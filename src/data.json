@@ -1,0 +1,38 @@
+{
+    "users": [
+      {
+        "id": "0",
+        "userName": "Master",
+        "password": "$2a$08$adKDmja0RQamK08GpqX1eugwnxRXiwc7sB0dI/gb5sTyQTQTBqUg6",
+        "passwordNoHash": "darNeHashintas0",
+        "role": "admin"
+      },
+      {
+        "id": "1",
+        "userName": "Mavic",
+        "password": "$2a$08$7mCkD1B0rrseIn.hlrU.PuX99X4YDyo.eT1J7GFyiGKeqXmkWA9AW",
+        "passwordNoHash": "darNeHashintas123",
+        "role": "user"
+      }
+    ],
+    "questions": [
+      {
+        "id": "0",
+        "userId": "1",
+        "title": "Title0",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto."
+      },
+      {
+        "id": "1",
+        "userId": "0",
+        "title": "Title2",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto."
+      },
+      {
+        "id": "0",
+        "userId": "1",
+        "title": "Title3",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto."
+      }
+    ]
+  }
