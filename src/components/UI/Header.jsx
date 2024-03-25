@@ -42,7 +42,7 @@ const Header = () => {
                             <NavLink to='/'>Pagrindinis</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/cards/klausimai'>Klausimai</NavLink>
+                            <NavLink to='/questions/klausimai'>Klausimai</NavLink>
                         </li>
                     </ul>
                 </nav>

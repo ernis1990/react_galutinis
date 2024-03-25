@@ -54,9 +54,9 @@ const Footer = () => {
             </div>
             <div>
                 <ul>
-                    <li><Link><i class="bi bi-facebook"></i></Link></li>
-                    <li><Link><i class="bi bi-instagram"></i></Link></li>
-                    <li><Link><i class="bi bi-linkedin"></i></Link></li>
+                    <li><Link><i className="bi bi-facebook"></i></Link></li>
+                    <li><Link><i className="bi bi-instagram"></i></Link></li>
+                    <li><Link><i className="bi bi-linkedin"></i></Link></li>
                 </ul>
             </div>
         </StyledFooter>
