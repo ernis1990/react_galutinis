@@ -1,4 +1,4 @@
-const Questions = () => {
+const Cards = () => {
     return ( 
         <>
             <h1>Questions</h1>
@@ -6,4 +6,4 @@ const Questions = () => {
      );
 }
  
-export default Questions;
+export default Cards;
