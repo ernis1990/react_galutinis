@@ -7,15 +7,19 @@ const StyledHeader = styled.header`
     align-items: center;
     border-bottom: 1px solid black;
     height: 80px;
+
     img{
         width: 50px;
+        margin-left: 40px;
     }
     ul{
         list-style-type: none;
         display: flex;
         text-decoration: none;
         gap: 20px;
-        margin-right: 40px;
+        margin: 40px;
+        
+    
 
         li{
             a{
@@ -35,7 +39,7 @@ const StyledHeader = styled.header`
 const Header = () => {
     return ( 
         <StyledHeader>
-            <div><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Stack_Overflow_icon.svg" alt="page logo" />
+            <div><img src="https://smarthusbygging.no/wp-content/uploads/2024/03/cropped-WhatsApp-Image-2024-03-13-at-16.24.15-123x113.png" alt="page logo" />
                 <nav>
                     <ul>
                         <li>

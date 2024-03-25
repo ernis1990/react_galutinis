@@ -4,7 +4,6 @@ import Question from "../UI/Question";
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-padding-top: 20px;
     margin: 20px;
     div{
         border:1px solid black

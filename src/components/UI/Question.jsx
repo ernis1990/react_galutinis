@@ -4,9 +4,9 @@ const StyledDiv = styled.div`
     border:solid 1px black;
     margin: 10px;
     padding: 10px;
+    background-color: #faeeb1;
 
     h3{
-        background-color: #dedede;
         color: #6b85db;
     }
 `;

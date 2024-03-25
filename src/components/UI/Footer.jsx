@@ -9,12 +9,14 @@ const StyledFooter = styled.footer`
     border-top: 1px solid black;
     height: 200px;
     img{
-        width: 200px;
+        width: 130px;
+        margin-left: 40px
     }
 
     ul{
         list-style-type: none;
         margin-right: 40px;
+        text-align:center;
         li{
             a{
                 text-decoration: none;
@@ -42,14 +44,14 @@ const StyledFooter = styled.footer`
 const Footer = () => {
     return ( 
         <StyledFooter>
-            <div><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Stack_Overflow_icon.svg" alt="page logo" /></div>
+            <div><img src="https://smarthusbygging.no/wp-content/uploads/2024/03/cropped-WhatsApp-Image-2024-03-13-at-16.24.15-123x113.png" alt="page logo" /></div>
             <div>
                 <ul>
-                    <li><Link>About</Link></li>
-                    <li><Link>Legal</Link></li>
-                    <li><Link>Privacy Policy</Link></li>
-                    <li><Link>Terms of Service</Link></li>
-                    <li><Link>Cookie Policy</Link></li>
+                    <li><Link>Apie mus</Link></li>
+                    <li><Link>Kontaktai</Link></li>
+                    <li><Link>Pasiūlimai</Link></li>
+                    <li><Link>Forumo taisyklės</Link></li>
+                    <li><Link>Privatumo Politika</Link></li>
                 </ul>
             </div>
             <div>
