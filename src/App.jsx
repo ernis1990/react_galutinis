@@ -6,12 +6,13 @@ import Register from './components/pages/Register';
 import Home from './components/pages/Home';
 import Cards from './components/pages/Cards';
 import Header from './components/UI/Header';
+import Footer from './components/UI/Footer';
 
 function App() {
   return (
     <>
+      <Header />
       <main>
-        <Header />
         <Routes>
           <Route index element={<Home />}/>
           <Route path='/cards'>
@@ -22,9 +23,8 @@ function App() {
             <Route path='register' element={<Register />}/>
           </Route>
         </Routes>
-
-
       </main>
+      <Footer/>
     </>
     
   );

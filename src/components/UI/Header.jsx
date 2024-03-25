@@ -6,6 +6,7 @@ const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid black;
+    height: 80px;
     img{
         width: 50px;
     }
