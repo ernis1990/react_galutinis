@@ -3,15 +3,13 @@
       {
         "id": "0",
         "userName": "Master",
-        "password": "$2a$08$adKDmja0RQamK08GpqX1eugwnxRXiwc7sB0dI/gb5sTyQTQTBqUg6",
-        "passwordNoHash": "darNeHashintas0",
+        "password": "master123",
         "role": "admin"
       },
       {
         "id": "1",
         "userName": "Mavic",
-        "password": "$2a$08$7mCkD1B0rrseIn.hlrU.PuX99X4YDyo.eT1J7GFyiGKeqXmkWA9AW",
-        "passwordNoHash": "darNeHashintas123",
+        "password": "useris123",
         "role": "user"
       }
     ],

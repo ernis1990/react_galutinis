@@ -1,5 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import styled from 'styled-components';
+import UsersContext from "../../contexts/UsersContext";
+import {useContext} from "react"
 
 const StyledHeader = styled.header`
     display: flex;
