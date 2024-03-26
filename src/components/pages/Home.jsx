@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import UsersContext  from "../../contexts/UsersContext";
+import {useContext} from "react"
 
 
 const StyledDiv = styled.div`
@@ -22,11 +24,18 @@ const StyledDiv = styled.div`
 `;
 
 const Home = () => {
+    const {loggedInUser} = useContext(UsersContext);
     return ( 
         <StyledDiv>
                 <div className='cover'></div>
                 <div className='homeText'>
-                <h1>Kviečiame į mūsų forumą, kur patyrę specialistai dalinasi žiniomis ir patarimais apie statybą. Prisijunkite ir sužinokite apie namų statybą nuo pamatų iki rakto!</h1>
+                {
+                    loggedInUser ?
+                    <h1>Sveikiname prisijungus !!!!!</h1>:
+                    <h1>Kviečiame į mūsų forumą, kur patyrę specialistai dalinasi žiniomis ir patarimais apie statybą. Prisijunkite ir sužinokite apie namų statybą nuo pamatų iki rakto!</h1>
+                }
+                
+                
                 </div>
             
                
