@@ -9,6 +9,9 @@ import styled from "styled-components";
 import { QuestionsActionTypes } from "../../contexts/CardsContext";
 
 const StyledSection = styled.section`
+
+
+  
   display: flex;
   flex-direction: column;
   align-items: center;

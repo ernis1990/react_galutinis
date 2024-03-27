@@ -31,6 +31,8 @@ const reducer = (state, action) => {
                 return state.filter(el => el.id !== action.id);
         default:
             return state;
+
+        
     }
 }
 

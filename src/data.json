@@ -30,19 +30,37 @@
       "id": "0",
       "userId": "1",
       "title": "Title0",
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto."
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto.",
+      "likes": "1",
+      "dislikes": "0",
+      "comments": [
+        {
+          "id": "0",
+          "authorId": "0",
+          "text": "Yes, very smart idea"
+        },
+        {
+          "id": "1",
+          "authorId": "1",
+          "text": "NOOOO!!! Fight the system!!!"
+        }
+      ]
     },
     {
       "id": "2",
       "userId": "1",
       "title": "Title3",
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto."
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto.",
+      "likes": "1",
+      "dislikes": "0"
     },
     {
-      "id": "b1fbdbb9-34de-44d3-8bb5-96f3b480b8f3",
+      "id": "63512a41-082d-4019-91ac-d0a91c549606",
       "userId": "0",
-      "title": "wd2d23d",
-      "description": "23d23d23d"
+      "title": "scsacsac",
+      "description": "ascascascc",
+      "likes": "1",
+      "dislikes": "0"
     }
   ]
 }
