@@ -8,15 +8,25 @@ const StyledFooter = styled.footer`
     align-items: center;
     border-top: 1px solid black;
     height: 200px;
+    
     img{
         width: 130px;
-        margin-left: 40px
+        
+    }
+    .image{
+        margin-left: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     ul{
         list-style-type: none;
         margin-right: 40px;
         text-align:center;
+        display: flex;
+        gap: 20px;
         li{
             a{
                 text-decoration: none;
@@ -44,7 +54,10 @@ const StyledFooter = styled.footer`
 const Footer = () => {
     return ( 
         <StyledFooter>
-            <div><img src="https://smarthusbygging.no/wp-content/uploads/2024/03/cropped-WhatsApp-Image-2024-03-13-at-16.24.15-123x113.png" alt="page logo" /></div>
+            <div className="image">
+                <img src="https://smarthusbygging.no/wp-content/uploads/2024/03/cropped-WhatsApp-Image-2024-03-13-at-16.24.15-123x113.png" alt="page logo" />
+                <p>Copyrights &copy; 2024 by ME</p>
+            </div>
             <div>
                 <ul>
                     <li><Link>Apie mus</Link></li>
