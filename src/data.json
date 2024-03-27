@@ -1,36 +1,66 @@
 {
-    "users": [
-      {
-        "id": "0",
-        "userName": "Master",
-        "password": "master123",
-        "role": "admin"
-      },
-      {
-        "id": "1",
-        "userName": "Mavic",
-        "password": "useris123",
-        "role": "user"
-      }
-    ],
-    "questions": [
-      {
-        "id": "0",
-        "userId": "1",
-        "title": "Title0",
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto."
-      },
-      {
-        "id": "1",
-        "userId": "0",
-        "title": "Title2",
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto."
-      },
-      {
-        "id": "2",
-        "userId": "1",
-        "title": "Title3",
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto."
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": "0",
+      "userName": "Master",
+      "password": "master123",
+      "role": "admin"
+    },
+    {
+      "id": "1",
+      "userName": "Mavic",
+      "password": "useris123",
+      "role": "user"
+    },
+    {
+      "id": "5eb41e7e-041e-43ab-9054-c6ed980594e9",
+      "userName": "Naujas123",
+      "password": "Naujas123!",
+      "role": "user"
+    },
+    {
+      "id": "66fe5d20-5a25-4b93-8554-83bf6745919b",
+      "userName": "Trolis",
+      "password": "Trolis123!",
+      "role": "user"
+    }
+  ],
+  "questions": [
+    {
+      "id": "0",
+      "userId": "1",
+      "title": "Title0",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto.",
+      "likes": "1",
+      "dislikes": "0",
+      "comments": [
+        {
+          "id": "0",
+          "authorId": "0",
+          "text": "Yes, very smart idea"
+        },
+        {
+          "id": "1",
+          "authorId": "1",
+          "text": "NOOOO!!! Fight the system!!!"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "title": "Title3",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto.",
+      "likes": "1",
+      "dislikes": "0"
+    },
+    {
+      "id": "63512a41-082d-4019-91ac-d0a91c549606",
+      "userId": "0",
+      "title": "scsacsac",
+      "description": "ascascascc",
+      "likes": "1",
+      "dislikes": "0"
+    }
+  ]
+}

@@ -4,15 +4,35 @@ import Questions from "../components/pages/Questions";
 const QuestionsContext = createContext();
 
 export const QuestionsActionTypes = {
-    getAll: 'fetch all data'
+    getAll: 'fetch all data',
+    addNew: 'adds new card date',
+    delete: 'delete one specific card',
+    
 }
 
 const reducer = (state, action) => {
     switch(action.type){
+
         case QuestionsActionTypes.getAll:
             return action.data;
+
+        case QuestionsActionTypes.addNew:
+            fetch(`http://localhost:8080/questions`, {
+                method: "POST",
+                headers:{
+                    "Content-Type":"aplication/json"
+                },
+                body: JSON.stringify(action.data)
+            });
+            return [...state, action.data];
+
+        case QuestionsActionTypes.delete:
+                fetch(`http://localhost:8080/questions/${action.id}`,{ method: "DELETE" });
+                return state.filter(el => el.id !== action.id);
         default:
             return state;
+
+        
     }
 }
 
