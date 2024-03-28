@@ -35,14 +35,14 @@
       "dislikes": "0",
       "comments": [
         {
-          "id": "0",
-          "authorId": "0",
-          "text": "Yes, very smart idea"
-        },
-        {
           "id": "1",
           "authorId": "1",
-          "text": "NOOOO!!! Fight the system!!!"
+          "text": "NOOOO!!! Figdddht the system!!!"
+        },
+        {
+          "text": "sdfdsfdsfsdf",
+          "id": "b425681d-9d36-461b-9472-fc855127593b",
+          "authorId": "0"
         }
       ]
     },

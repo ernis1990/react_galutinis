@@ -4,6 +4,9 @@ import { useEffect, useState, useContext } from "react";
 import UsersContext from "../../contexts/UsersContext";
 import CardsContext, { QuestionsActionTypes } from "../../contexts/CardsContext";
 import Comment from "../UI/Comment";
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { v4 as uuid } from 'uuid';
 
 const StyledSection = styled.section`
     div {
@@ -37,85 +40,95 @@ const OneQuestionPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const { loggedInUser } = useContext(UsersContext);
-    const { setQuestions } = useContext(CardsContext);
-    const [card, setCard] = useState([]);
-    const [likes, setLikes] = useState(0);
-    const [dislikes, setDislikes] = useState(0);
-    const [selectedButton, setSelectedButton] = useState(null);
+    const { setQuestions, questions } = useContext(CardsContext);
+    const card = questions.find(question => question.id === id);
+    
+    // const [card, setCard] = useState([]);
+   
 
-    useEffect(() => {
-        fetch(`http://localhost:8080/questions/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setCard(data);
-                setLikes(parseInt(data.likes));
-                setDislikes(parseInt(data.dislikes));
-            });
-    }, [id]);
-
-    const handleLike = () => {
-        if (selectedButton !== 'like') {
-            setLikes(prevLikes => prevLikes + 1);
-            setDislikes(prevDislikes => prevDislikes - (selectedButton === 'dislike' ? 1 : 0));
-            setSelectedButton('like');
-        } else {
-            setLikes(prevLikes => prevLikes - 1);
-            setSelectedButton(null);
+    const formik = useFormik({
+        initialValues: {
+          text: ''
+        },
+        validationSchema: Yup.object({
+          text: Yup.string()
+          .min(10, 'Comment must be at least 10 symbols length')
+          .max(500, "Comment can't be longer than 500 symbols")
+          .required('This field must be filled')
+          .trim()
+        }),
+        onSubmit: (values) => {
+          const newComment = {
+            text: values.text,
+            id: uuid(),
+            authorId: loggedInUser.id
+          }
+          // console.log(newComment);
+          setQuestions({
+            type: QuestionsActionTypes.addComment,
+            comment: newComment,
+            cardId: card.id
+          });
+          formik.resetForm();
         }
-    };
-
-    const handleDislike = () => {
-        if (selectedButton !== 'dislike') {
-            setDislikes(prevDislikes => prevDislikes + 1);
-            setLikes(prevLikes => prevLikes - (selectedButton === 'like' ? 1 : 0));
-            setSelectedButton('dislike');
-        } else {
-            setDislikes(prevDislikes => prevDislikes - 1);
-            setSelectedButton(null);
-        }
-    };
-
-    return (
+      });
+    
+      return (
         <StyledSection>
-            <div>
-                <h2>{card.title}</h2>
+          {
+            questions.length &&
+            <>
+              <div>
+                <h3>{card.title}</h3>
                 <p>{card.description}</p>
-
-                <div className="actions">
-                    <i className="bi bi-hand-thumbs-up-fill" onClick={handleLike} >{likes}</i>
-                    
-                    <i className="bi bi-hand-thumbs-down-fill" onClick={handleDislike} >{dislikes}</i>
-                    
-                </div>
-
-                {loggedInUser.id === card.userId && (
-                    <button
-                        onClick={() => {
-                            setQuestions({
-                                type: QuestionsActionTypes.delete,
-                                id: card.id
-                            });
-                            navigate(-1);
-                        }}
-                    >
-                        Ištrinti
-                    </button>
-                )}
-            </div>
-            <div>
-            {
-              card.comments?.map(comment => 
-                <Comment
-                  key={comment.id}
-                  comment={comment}
-                  cardId={card.id}
-                />
-              )
-            }
-          </div>
-          
+                {
+                  loggedInUser.id === card.userId &&
+                  <button
+                    onClick={() => {
+                      setQuestions({
+                        type: QuestionsActionTypes.delete,
+                        id: card.id
+                      });
+                      navigate(-1);
+                    }}
+                  >Delete</button>
+                }
+              </div>
+              <div>
+                {
+                  card.comments?.map(comment => 
+                    <Comment
+                      key={comment.id}
+                      comment={comment}
+                      cardId={card.id}
+                    />
+                  )
+                }
+              </div>
+              {
+                loggedInUser &&
+                <form onSubmit={formik.handleSubmit}>
+                  <div>
+                    <label htmlFor="text">Comment:</label>
+                    <textarea
+                      name="text" id="text"
+                      placeholder="Write your comment..."
+                      value={formik.values.text}
+                      onBlur={formik.handleBlur}
+                      onChange={formik.handleChange}
+                    />
+                    {
+                      formik.touched.text && formik.errors.text &&
+                      <p>{formik.errors.text}</p>
+                    }
+                  </div>
+                  <input type="submit" value="Comment" />
+                </form>
+              }
+            </>
+          }
         </StyledSection>
-    );
-};
-
-export default OneQuestionPage;
+      );
+    }
+     
+    export default OneQuestionPage;
