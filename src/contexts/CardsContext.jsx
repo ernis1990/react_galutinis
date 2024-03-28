@@ -3,11 +3,15 @@ import Questions from "../components/pages/Questions";
 
 const QuestionsContext = createContext();
 
+
 export const QuestionsActionTypes = {
     getAll: 'fetch all data',
     addNew: 'adds new card date',
     delete: 'delete one specific card',
-    deleteComment: 'delete one specific comment'
+    deleteComment: 'delete one specific comment',
+    editComment: 'edit one specific comment',
+    like: 'like question',
+    dislike: 'dislike question'
     
 }
 
@@ -47,6 +51,33 @@ const reducer = (state, action) => {
             return el;
           }
         });
+        case QuestionsActionTypes.editComment:
+            const cardToEditComment = state.find(el => el.id === action.cardId);
+            const updatedComments = cardToEditComment.comments.map(comment => {
+                if (comment.id === action.commentId) {
+                return { ...comment, text: action.newText };
+                }
+                return comment;
+            });
+            const updatedCard = {
+                ...cardToEditComment,
+                comments: updatedComments
+            };
+            fetch(`http://localhost:8080/questions/${action.cardId}`, {
+                method: "PUT",
+                headers: {
+                "Content-Type": "application/json"
+                },
+                body: JSON.stringify(updatedCard)
+            });
+            return state.map(el => {
+                if (el.id === action.cardId) {
+                return updatedCard;
+                } else {
+                return el;
+            }
+        });
+        
       case QuestionsActionTypes.deleteComment:
         const cardToChange = state.find(el => el.id === action.cardId);
         const changedCard = {
@@ -67,6 +98,68 @@ const reducer = (state, action) => {
             return el;
           }
         });
+        case 'like':
+            return state.map(question => {
+              if (question.id === action.id) {
+                const updatedLikes = String(Number(question.likes) + 1);
+                const updatedDislikes = action.hasDisliked ? String(Number(question.dislikes) - 1) : question.dislikes;
+                const updatedQuestion = { ...question, likes: updatedLikes, dislikes: updatedDislikes };
+                
+
+                fetch(`http://localhost:8080/questions/${action.id}`, {
+                  method: "PUT",
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify(updatedQuestion)
+                }).then(response => {
+                  if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                  }
+                  return response.json();
+                }).then(data => {
+                  console.log('Success:', data);
+                }).catch((error) => {
+                  console.error('Error:', error);
+                });
+          
+                return updatedQuestion;
+              }
+              return question;
+            });
+          
+          case 'dislike':
+            return state.map(question => {
+              if (question.id === action.id) {
+                const updatedDislikes = String(Number(question.dislikes) + 1);
+                const updatedLikes = action.hasLiked ? String(Number(question.likes) - 1) : question.likes;
+                const updatedQuestion = { ...question, likes: updatedLikes, dislikes: updatedDislikes };
+                
+ 
+                fetch(`http://localhost:8080/questions/${action.id}`, {
+                  method: "PUT",
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify(updatedQuestion)
+                }).then(response => {
+                  if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                  }
+                  return response.json();
+                }).then(data => {
+                  console.log('Success:', data);
+                }).catch((error) => {
+                  console.error('Error:', error);
+                });
+          
+                return updatedQuestion;
+              }
+              return question;
+            });
+          
+        
+        
       default:
         console.error(`No such reducer actions: ${action.type}`);
         return state;
@@ -97,6 +190,8 @@ const reducer = (state, action) => {
       </QuestionsContext.Provider>
     )
   }
+
+  
   
   export { QuestionsProvider };
   export default QuestionsContext;

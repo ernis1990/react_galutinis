@@ -7,92 +7,93 @@ import Comment from "../UI/Comment";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { v4 as uuid } from 'uuid';
-import { BsHeart, BsHeartFill } from 'react-icons/bs'; // Importing Bootstrap icons
+
 
 const StyledSection = styled.section`
-  background-color: #34495e; /* Tamsus fonas */
-  color: #ecf0f1; /* Šviesus tekstas */
+  background-color: #34495e;
+  color: #ecf0f1;
   padding: 20px;
   border-radius: 8px;
-  margin-bottom: 10px; /* Atstumas tarp skilties elementų */
-  border-left: 5px solid #f1c40f; /* Ryški pastelinė spalva kairėje juostoje */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Šešėlis aplink skiltį */
+  margin-bottom: 10px;
+  border-left: 5px solid #f1c40f;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
   h3 {
-    color: #f39c12; /* Ryški pastelinė spalva antraštei */
+    color: #f39c12;
     margin-bottom: 10px;
     font-size: 35px;
   }
 
   p {
-    color: #737373; /* Šviesesnė pilka spalva teksto turiniui */
+    color: #737373;
     margin-bottom: 15px;
+    font-size: 20px;
   }
 
   button {
-    background-color: #2ecc71; /* Žalia spalva mygtukams */
+    background-color: #2ecc71;
     color: white;
     border: none;
     padding: 10px 15px;
-    border-radius: 4px; /* Apvalinti kampai mygtukams */
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s; /* Sklandus spalvos keitimas */
+    transition: background-color 0.2s;
 
     &:hover {
-      background-color: #27ae60; /* Tamsesnė žalia spalva užvedus pelę */
+      background-color: #27ae60;
     }
 
     &.like-button {
-      margin-right: 10px; /* Atstumas tarp mygtukų */
+      margin-right: 10px;
     }
   }
 
   .comments {
-    background-color: #2c3e50; /* Tamsesnė spalva komentarų skiltyje */
+    background-color: #2c3e50;
     padding: 15px;
-    border-radius: 8px; /* Apvalinti kampai komentarų skiltyje */
-    margin-top: 20px; /* Atstumas nuo pagrindinės skilties iki komentarų */
+    border-radius: 8px;
+    margin-top: 20px;
   }
 
   form {
-    background-color: #2c3e50; /* Tamsesnė spalva formos skiltyje */
-    padding: 15px;
-    border-radius: 8px; /* Apvalinti kampai formos skiltyje */
-    margin-top: 20px; /* Atstumas nuo komentarų skilties iki formos */
+    background-color: #2c3e50;
+    border-radius: 8px;
+    margin-top: 20px;
   }
 
   label {
-    color: #ecf0f1; /* Šviesus tekstas etiketėms */
+    color: #ecf0f1;
   }
 
   textarea {
-    width: 100%;
+    width: calc(100% - 22px); 
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
-    border: 1px solid #7f8c8d; /* Pilka spalva rėmeliui */
-    background-color: #95a5a6; /* Šviesesnė pilka spalva teksto laukui */
-    color: white; /* Šviesus tekstas teksto laukui */
-
-    &:focus {
-      border-color: #f39c12; /* Ryški pastelinė spalva fokusuojant */
-    }
+    border: 2px solid #16a085;
+    background-color: #ecf0f1; 
+    color: #34495e; 
+    font-size: 16px; 
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
   }
 
   input[type="submit"] {
-    background-color: #3498db; /* Mėlyna spalva pateikimo mygtukui */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px; /* Apvalinti kampai pateikimo mygtukui */
+    background-color: #e67e22; 
+    color: #ecf0f1;
+    border: 2px solid #d35400; 
+    padding: 12px 18px; 
+    border-radius: 6px; 
     cursor: pointer;
-    transition: background-color 0.2s; /* Sklandus spalvos keitimas */
+    font-weight: bold; 
+    transition: background-color 0.2s, transform 0.2s; 
 
     &:hover {
-      background-color: #2980b9; /* Tamsesnė mėlyna spalva užvedus pelę */
+      background-color: #d35400; 
+      transform: scale(1.05); 
     }
   }
-  .description{
+
+  .description {
     color: white;
   }
 `;
@@ -103,7 +104,7 @@ const OneQuestionPage = () => {
     const { loggedInUser } = useContext(UsersContext);
     const { setQuestions, questions } = useContext(CardsContext);
     const [card, setCard] = useState(null);
-    const [liked, setLiked] = useState(false); // State to manage likes
+    
 
     useEffect(() => {
         const foundCard = questions.find(question => question.id === id);
@@ -114,26 +115,15 @@ const OneQuestionPage = () => {
         }
     }, [id, questions, navigate]);
 
-    // Handlers for like and unlike actions
-    const handleLike = () => {
-        setLiked(true);
-        // Implement the logic to increase the like count in your context or backend
-    };
-
-    const handleUnlike = () => {
-        setLiked(false);
-        // Implement the logic to decrease the like count in your context or backend
-    };
-
     const formik = useFormik({
         initialValues: {
           text: ''
         },
         validationSchema: Yup.object({
           text: Yup.string()
-          .min(10, 'Comment must be at least 10 symbols length')
-          .max(500, "Comment can't be longer than 500 symbols")
-          .required('This field must be filled')
+          .min(10, 'Komentaras privalo buti ilgesnis nei 10 simbolių')
+          .max(500, "Komentaras privalo buti trumpesnis nei 500 simbolių")
+          .required('Privaloma užpildyti')
           .trim()
         }),
         onSubmit: (values) => {
@@ -159,16 +149,8 @@ const OneQuestionPage = () => {
                     <div>
                         <h3>{card.title}</h3>
                         <p className="description">{card.description}</p>
-                        {/* Like and Unlike buttons with icons */}
-                        {liked ? (
-                            <button onClick={handleUnlike}>
-                                <BsHeartFill color="red" /> Unlike
-                            </button>
-                        ) : (
-                            <button onClick={handleLike}>
-                                <BsHeart /> Like
-                            </button>
-                        )}
+                        
+                        
                         {
                           loggedInUser.id === card.userId &&
                           <button
@@ -179,7 +161,7 @@ const OneQuestionPage = () => {
                               });
                               navigate('/questions/klausimai');
                             }}
-                          >Delete</button>
+                          >Ištrinti</button>
                         }
                     </div>
                     <div className="comments">
@@ -197,10 +179,10 @@ const OneQuestionPage = () => {
                         loggedInUser &&
                         <form onSubmit={formik.handleSubmit}>
                           <div>
-                            <label htmlFor="text">Comment:</label>
+                            <label htmlFor="text">Komentaras:</label>
                             <textarea
                               name="text" id="text"
-                              placeholder="Write your comment..."
+                              placeholder="Rašyti komentarą..."
                               value={formik.values.text}
                               onBlur={formik.handleBlur}
                               onChange={formik.handleChange}
@@ -210,7 +192,7 @@ const OneQuestionPage = () => {
                               <p>{formik.errors.text}</p>
                             }
                           </div>
-                          <input type="submit" value="Comment" />
+                          <input type="submit" value="Komentuoti" />
                         </form>
                     }
                 </>

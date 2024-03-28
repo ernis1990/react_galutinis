@@ -9,9 +9,6 @@ import styled from "styled-components";
 import { QuestionsActionTypes } from "../../contexts/CardsContext";
 
 const StyledSection = styled.section`
-
-
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,29 +19,53 @@ const StyledSection = styled.section`
   background-size: cover;
   background-image: url('https://img.freepik.com/premium-photo/hard-hats-yellow-cap-mine-safety-appliances-cement-floor_35719-3052.jpg');
     
-  > h1{
+  > h1 {
     font-size: 3rem;
-    color: white;
+    color: #ffffff;
   }
 
-  > form{
+  > form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 
     > div {
       display: flex;
       flex-direction: column;
       width: 400px;
-      color: white;
 
-      > textarea{
-        height: 5lh;
+      > label {
+        color: #333; 
       }
-      > p{
-        grid-column: span 3;
-        color: red;
+
+      > input, textarea {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px; 
+        margin-bottom: 5px;
+      }
+
+      > p {
+        color: #e74c3c; 
         text-align: center;
+      }
+    }
+
+    > input[type="submit"] {
+      background-color: #3498db; 
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px; 
+      cursor: pointer;
+      transition: background-color 0.3s ease; 
+
+      &:hover {
+        background-color: #2980b9;
       }
     }
   }
@@ -58,7 +79,10 @@ const AddNewQuestion = () => {
     const formik = useFormik({
         initialValues: {
           title: "",
-          description: ""
+          description: "",
+          likes: "",
+          dislikes: ""
+
         }, 
         onSubmit: values => {
             

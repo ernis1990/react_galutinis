@@ -13,35 +13,60 @@ const StyledSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding-top: 70px;
-  min-height: calc(100vh - 80px - 200px);
+  background-image: url('https://images.unsplash.com/photo-1495422964407-28c01bf82b0d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90oy1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('https://media.istockphoto.com/id/521134300/photo/photo-of-blur-housing-estate.jpg?s=612x612&w=0&k=20&c=HorvB5JhFrx56G7VBOLfFsS1SIppDCkqLVX65FutPnw=');
+  min-height: calc(100vh - 80px - 200px);
 
-  > h1{
-    font-size: 3rem;
+  > h1 {
+    font-size: 50px;
+    color: #ffffff;
   }
 
-  > form{
+  > form {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
     width: 300px;
-    gap: 10px;
-    
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); 
 
     > div {
       display: flex;
       flex-direction: column;
 
-      > p{
-        grid-column: span 3;
-        color: red;
+      > label {
+        color: #333; 
+      }
+
+      > input {
+        border: 1px solid #ccc; 
+        border-radius: 5px; 
+        padding: 10px;
+        margin-bottom: 5px; 
+      }
+
+      > p {
+        color: #e74c3c;
         text-align: center;
       }
     }
-    +p{
-      color: red;
+
+    > input[type="submit"] {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease; 
+
+      &:hover {
+        background-color: #2980b9; 
+      }
     }
   }
 `;
@@ -59,8 +84,7 @@ const Register = () => {
       passwordRepeat: ""
     },
     onSubmit: (values) => {
-      // console.log(values);
-      // console.log(users);
+     
 
       if(users.find(user => user.userName === values.userName)){
         setSameNameError(true);

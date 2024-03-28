@@ -9,7 +9,7 @@
     {
       "id": "1",
       "userName": "Mavic",
-      "password": "useris123",
+      "password": "mavic123",
       "role": "user"
     },
     {
@@ -29,54 +29,80 @@
       "userName": "Jonas",
       "password": "Jonas123!",
       "role": "user"
+    },
+    {
+      "id": "3dc556a9-a315-4025-bc3b-1de31e45bdbb",
+      "userName": "Petras",
+      "password": "Petras123!",
+      "role": "user"
+    },
+    {
+      "id": "ff6e827f-dea6-45a5-ae0e-46b5bbd3d719",
+      "userName": "Mantas",
+      "password": "Mantas123!",
+      "role": "user"
     }
   ],
   "questions": [
     {
-      "id": "0",
-      "userId": "1",
-      "title": "Title0",
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto.",
-      "likes": "1",
-      "dislikes": "0",
+      "id": "230c5e81-7b3b-4cb3-a8df-cadabedec213",
+      "userId": "0",
+      "title": "Izoliacijos medžiaga ",
+      "description": "Kokia yra efektyviausia šilumos izoliacijos medžiaga naudojama individualių namų statyboje, ir kodėl ji laikoma geriausia pasirinkimu?",
+      "likes": "3",
+      "dislikes": "",
       "comments": [
         {
-          "id": "1",
-          "authorId": "1",
-          "text": "NOOOO!!! Figdddht the system!!!"
+          "text": "Efektyviausia šilumos izoliacijos medžiaga individualių namų statyboje dažnai yra mineralinė vata. ",
+          "id": "5b900660-aa38-4f77-9ba9-10fcd2e5df22",
+          "authorId": "0"
         },
         {
-          "text": "ertergergrgeg",
-          "id": "397914d4-a758-40eb-b376-04efc72f842b",
+          "text": "Nesamones šneki :D",
+          "id": "93db4608-b995-4cd2-825a-4d202f02eaf2",
+          "authorId": "dc5629c4-f631-4659-b657-a7531c88f633"
+        },
+        {
+          "text": "Liux :))))",
+          "id": "f465d0f9-2884-43e4-8198-16d59165a043",
           "authorId": "0"
         }
       ]
     },
     {
-      "id": "2",
-      "userId": "1",
-      "title": "Title3",
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, iusto.",
+      "id": "11c9bed2-5223-4081-b048-14fadffe6967",
+      "userId": "dc5629c4-f631-4659-b657-a7531c88f633",
+      "title": "Pamatai",
+      "description": "Kokie yra pagrindiniai veiksniai, kuriuos reikia įvertinti prieš pilant pamatus individualiame namų statybos projekte?",
       "likes": "1",
-      "dislikes": "0",
+      "dislikes": "1",
       "comments": [
         {
-          "text": "ewdewdwedwed",
-          "id": "509041e2-29c9-4cf4-a9e0-540992d377a5",
+          "text": "Prieš pilant pamatus individualiame namų statybos projekte, svarbu įvertinti šiuos pagrindinius veiksnius:\n\nSklypo geologija: gruntų tyrimai, kad nustatytumėte dirvožemio tipą ir jo tinkamumą pamatams\nGruntinio vandens lygis: tai gali turėti įtakos pamatų tipo pasirinkimui ir drenažo sistemai\nSklypo reljefas: lygus arba nelygus reljefas gali daryti įtaką pamatų konstrukcijai ir išlaidoms\nStatybos leidimas: užtikrinti, kad visi reikiami dokumentai ir leidimai yra gauti prieš pradedant statybas\n\n",
+          "id": "6d8126ff-cbcf-49b2-899a-f9e70644379b",
           "authorId": "dc5629c4-f631-4659-b657-a7531c88f633"
         },
         {
-          "text": "wedewdwedwed",
-          "id": "67a8eea6-565b-4d27-bd3f-a1cfc8c8f311",
-          "authorId": "dc5629c4-f631-4659-b657-a7531c88f633"
+          "text": "Gerai pasakyta",
+          "id": "411bd322-40d9-4138-971a-4199b1cc1cff",
+          "authorId": "ff6e827f-dea6-45a5-ae0e-46b5bbd3d719"
         }
       ]
     },
     {
-      "id": "8e2a4cbb-eb98-4dba-91e3-cf0b3c0310c8",
+      "id": "72aae57c-7404-4e80-add5-79f7dea2db9c",
       "userId": "0",
-      "title": "gdrghrdh",
-      "description": "drhdrhdh"
+      "title": "Tvari statyba",
+      "description": "Kokios yra svarbiausios tvarios statybos praktikos, kurias reikėtų taikyti naujų gyvenamųjų namų projektavime ir statyboje?",
+      "likes": "1",
+      "dislikes": "",
+      "comments": [
+        {
+          "text": "Ar kas žino ?",
+          "id": "787708f5-f55d-4450-8f72-0e71a837421d",
+          "authorId": "0"
+        }
+      ]
     }
   ]
 }
