@@ -10,13 +10,13 @@ import { v4 as uuid } from 'uuid';
 
 
 const StyledSection = styled.section`
-  background-color: #34495e; 
+  background-color: #34495e;
   color: #ecf0f1;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 10px;
-  border-left: 5px solid #f1c40f; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  border-left: 5px solid #f1c40f;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
   h3 {
     color: #f39c12;
@@ -25,22 +25,23 @@ const StyledSection = styled.section`
   }
 
   p {
-    color: #737373; 
+    color: #737373;
     margin-bottom: 15px;
     font-size: 20px;
   }
 
   button {
-    background-color: #2ecc71; 
+    background-color: #2ecc71;
     color: white;
     border: none;
     padding: 10px 15px;
-    border-radius: 4px; 
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s;
 
     &:hover {
       background-color: #27ae60;
+    }
 
     &.like-button {
       margin-right: 10px;
@@ -48,50 +49,51 @@ const StyledSection = styled.section`
   }
 
   .comments {
-    background-color: #2c3e50; 
+    background-color: #2c3e50;
     padding: 15px;
-    border-radius: 8px; 
-    margin-top: 20px; 
+    border-radius: 8px;
+    margin-top: 20px;
   }
 
   form {
-    background-color: #2c3e50; 
-    border-radius: 8px; 
+    background-color: #2c3e50;
+    border-radius: 8px;
     margin-top: 20px;
   }
 
   label {
-    color: #ecf0f1; 
+    color: #ecf0f1;
   }
 
   textarea {
-    width: 100%;
+    width: calc(100% - 22px); 
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
-    border: 1px solid #7f8c8d; 
-    background-color: #95a5a6; 
-    color: white; 
-
-    &:focus {
-      border-color: #f39c12; 
-    }
+    border: 2px solid #16a085;
+    background-color: #ecf0f1; 
+    color: #34495e; 
+    font-size: 16px; 
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
   }
 
   input[type="submit"] {
-    background-color: #3498db; 
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
+    background-color: #e67e22; 
+    color: #ecf0f1;
+    border: 2px solid #d35400; 
+    padding: 12px 18px; 
+    border-radius: 6px; 
     cursor: pointer;
-    transition: background-color 0.2s; 
+    font-weight: bold; 
+    transition: background-color 0.2s, transform 0.2s; 
 
     &:hover {
-      background-color: #2980b9; 
+      background-color: #d35400; 
+      transform: scale(1.05); 
     }
   }
-  .description{
+
+  .description {
     color: white;
   }
 `;

@@ -35,6 +35,12 @@
       "userName": "Petras",
       "password": "Petras123!",
       "role": "user"
+    },
+    {
+      "id": "ff6e827f-dea6-45a5-ae0e-46b5bbd3d719",
+      "userName": "Mantas",
+      "password": "Mantas123!",
+      "role": "user"
     }
   ],
   "questions": [
@@ -43,7 +49,7 @@
       "userId": "0",
       "title": "Izoliacijos medžiaga ",
       "description": "Kokia yra efektyviausia šilumos izoliacijos medžiaga naudojama individualių namų statyboje, ir kodėl ji laikoma geriausia pasirinkimu?",
-      "likes": "2",
+      "likes": "3",
       "dislikes": "",
       "comments": [
         {
@@ -55,6 +61,11 @@
           "text": "Nesamones šneki :D",
           "id": "93db4608-b995-4cd2-825a-4d202f02eaf2",
           "authorId": "dc5629c4-f631-4659-b657-a7531c88f633"
+        },
+        {
+          "text": "Liux :))))",
+          "id": "f465d0f9-2884-43e4-8198-16d59165a043",
+          "authorId": "0"
         }
       ]
     },
@@ -64,12 +75,17 @@
       "title": "Pamatai",
       "description": "Kokie yra pagrindiniai veiksniai, kuriuos reikia įvertinti prieš pilant pamatus individualiame namų statybos projekte?",
       "likes": "1",
-      "dislikes": "",
+      "dislikes": "1",
       "comments": [
         {
           "text": "Prieš pilant pamatus individualiame namų statybos projekte, svarbu įvertinti šiuos pagrindinius veiksnius:\n\nSklypo geologija: gruntų tyrimai, kad nustatytumėte dirvožemio tipą ir jo tinkamumą pamatams\nGruntinio vandens lygis: tai gali turėti įtakos pamatų tipo pasirinkimui ir drenažo sistemai\nSklypo reljefas: lygus arba nelygus reljefas gali daryti įtaką pamatų konstrukcijai ir išlaidoms\nStatybos leidimas: užtikrinti, kad visi reikiami dokumentai ir leidimai yra gauti prieš pradedant statybas\n\n",
           "id": "6d8126ff-cbcf-49b2-899a-f9e70644379b",
           "authorId": "dc5629c4-f631-4659-b657-a7531c88f633"
+        },
+        {
+          "text": "Gerai pasakyta",
+          "id": "411bd322-40d9-4138-971a-4199b1cc1cff",
+          "authorId": "ff6e827f-dea6-45a5-ae0e-46b5bbd3d719"
         }
       ]
     },
@@ -78,7 +94,7 @@
       "userId": "0",
       "title": "Tvari statyba",
       "description": "Kokios yra svarbiausios tvarios statybos praktikos, kurias reikėtų taikyti naujų gyvenamųjų namų projektavime ir statyboje?",
-      "likes": "",
+      "likes": "1",
       "dislikes": "",
       "comments": [
         {
