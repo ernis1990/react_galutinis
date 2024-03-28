@@ -4,6 +4,8 @@ import CardsContext from "../../contexts/CardsContext";
 import { QuestionsActionTypes } from "../../contexts/CardsContext";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import EditComment from '../../contexts/EditComment';
+import { useState } from "react";
 
 const StyledSection = styled.section`
   display: flex;
@@ -47,6 +49,7 @@ const Comment = ({ comment, cardId }) => {
   const navigate = useNavigate();
   const { loggedInUser, users } = useContext(UsersContext);
   const { setQuestions } = useContext(CardsContext);
+  const [isEditing, setIsEditing] = useState(false);
   const author = users.find(user => user.id === comment.authorId);
 
   return (
@@ -66,6 +69,15 @@ const Comment = ({ comment, cardId }) => {
               })}
             
             >Delete</button>
+          }
+          {
+            loggedInUser.id === comment.authorId &&
+              <>
+                <button onClick={() => setIsEditing(!isEditing)}>
+                  {isEditing ? 'Cancel' : 'Edit'}
+                </button>
+                {isEditing && <EditComment comment={comment} cardId={cardId} />}
+              </>
           }
         </div>
       }

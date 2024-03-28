@@ -58,7 +58,10 @@ const AddNewQuestion = () => {
     const formik = useFormik({
         initialValues: {
           title: "",
-          description: ""
+          description: "",
+          likes: "",
+          dislikes: ""
+
         }, 
         onSubmit: values => {
             

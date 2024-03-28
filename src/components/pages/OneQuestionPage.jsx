@@ -103,7 +103,7 @@ const OneQuestionPage = () => {
     const { loggedInUser } = useContext(UsersContext);
     const { setQuestions, questions } = useContext(CardsContext);
     const [card, setCard] = useState(null);
-    const [liked, setLiked] = useState(false); // State to manage likes
+    
 
     useEffect(() => {
         const foundCard = questions.find(question => question.id === id);
@@ -115,15 +115,7 @@ const OneQuestionPage = () => {
     }, [id, questions, navigate]);
 
     // Handlers for like and unlike actions
-    const handleLike = () => {
-        setLiked(true);
-        // Implement the logic to increase the like count in your context or backend
-    };
 
-    const handleUnlike = () => {
-        setLiked(false);
-        // Implement the logic to decrease the like count in your context or backend
-    };
 
     const formik = useFormik({
         initialValues: {
@@ -160,15 +152,7 @@ const OneQuestionPage = () => {
                         <h3>{card.title}</h3>
                         <p className="description">{card.description}</p>
                         {/* Like and Unlike buttons with icons */}
-                        {liked ? (
-                            <button onClick={handleUnlike}>
-                                <BsHeartFill color="red" /> Unlike
-                            </button>
-                        ) : (
-                            <button onClick={handleLike}>
-                                <BsHeart /> Like
-                            </button>
-                        )}
+                        
                         {
                           loggedInUser.id === card.userId &&
                           <button
