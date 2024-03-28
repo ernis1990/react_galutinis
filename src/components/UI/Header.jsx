@@ -4,55 +4,62 @@ import UsersContext  from "../../contexts/UsersContext";
 import {useContext} from "react"
 
 const StyledHeader = styled.header`
+    background-color: #2c3e50; /* Dark background */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #ecf0f1; /* Light stripe for separation */
     height: 80px;
 
-    img{
+    img {
         width: 50px;
         margin-left: 40px;
     }
-    ul{
+
+    ul {
         list-style-type: none;
         display: flex;
         text-decoration: none;
         gap: 20px;
         margin: 40px;
         
-    
-
-        li{
-            a{
+        li {
+            a {
                 text-decoration: none;
-                color: black;
+                color: #3498db; /* Bright pastel color */
                 font-size: 20px;
+                &:hover {
+                    color: #9b59b6; /* Slightly different pastel shade on hover */
+                }
             }
         }
     }
-    div{
+
+    div {
         display: flex;
         align-items: center;
     }
 
-    .login{
+    .login {
         padding-right: 20px;
-        p{
+        p {
             padding-right: 20px;
             font-size: 25px;
+            color: #ecf0f1; /* Light text color for contrast */
         }
-        button{
-            background-color: red;
+        button {
+            background-color: #8e44ad; /* Changed from red to a pastel purple */
             border-radius: 5px;
-            border:none;
+            border: none;
             padding: 5px 10px;
             color: white;
             letter-spacing: 2px;
             font-weight: 600;
+            &:hover {
+                background-color: #3498db; /* Different pastel shade on hover */
+            }
         }
     }
-    
 `;
 
 const Header = () => {
