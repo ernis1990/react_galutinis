@@ -4,6 +4,7 @@ import { QuestionsActionTypes } from './CardsContext';
 
 const EditComment = ({ comment, cardId }) => {
   const [newText, setNewText] = useState(comment.text);
+  const [isEditing, setIsEditing] = useState(true);
   const { setQuestions } = useContext(QuestionsContext);
 
   const handleEdit = () => {
@@ -13,12 +14,19 @@ const EditComment = ({ comment, cardId }) => {
       cardId: cardId,
       newText: newText
     });
+    setIsEditing(false); 
   };
 
   return (
     <div>
-      <textarea value={newText} onChange={(e) => setNewText(e.target.value)} />
-      <button onClick={handleEdit}>Save</button>
+      {isEditing ? (
+        <>
+          <textarea value={newText} onChange={(e) => setNewText(e.target.value)} />
+          <button onClick={handleEdit}>Išsaugoti</button>
+        </>
+      ) : (
+        <p>Komentaras sėkmingai atnaujintas.</p>
+      )}
     </div>
   );
 };

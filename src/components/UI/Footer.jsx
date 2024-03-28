@@ -3,59 +3,58 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
+    background-color: #34495e;
+    color: #ecf0f1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid black;
-    height: 200px;
-    
-    img{
-        width: 130px;
-        
-    }
-    .image{
-        margin-left: 40px;
+    padding: 20px 40px;
+    border-top: 3px solid #f39c12; 
+
+    .image {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        img {
+            width: 130px;
+            margin-bottom: 10px;
+        }
     }
 
-    ul{
+    ul {
         list-style-type: none;
-        margin-right: 40px;
-        text-align:center;
         display: flex;
         gap: 20px;
-        li{
-            a{
+        padding: 0;
+        margin: 0;
+        li {
+            a {
                 text-decoration: none;
-                color: black;
-                line-height: 30px;
-            }
-            a:hover{
-                color: #f37200;
-            }
-            i{
-                font-size: 30px;
+                color: #ecf0f1; 
+                font-size: 18px;
+                &:hover {
+                    color: #f39c12; 
+                }
             }
         }
     }
 
-    div:nth-child(3){
-        ul{
-            display: flex;  
-            gap: 20px;
+    .social-media-icons {
+        font-size: 24px;
+        a {
+            color: #ecf0f1;
+            &:hover {
+                color: #f39c12; 
+            }
         }
     }
-    
 `;
 
 const Footer = () => {
     return ( 
         <StyledFooter>
             <div className="image">
-                <img src="https://smarthusbygging.no/wp-content/uploads/2024/03/cropped-WhatsApp-Image-2024-03-13-at-16.24.15-123x113.png" alt="page logo" />
+                <img src="https://i.stack.imgur.com/17UsL.png" alt="page logo" />
                 <p>Copyrights &copy; 2024 by ME</p>
             </div>
             <div>

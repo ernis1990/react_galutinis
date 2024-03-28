@@ -17,29 +17,54 @@ const StyledSection = styled.section`
   background-size: cover;
   min-height: calc(100vh - 80px - 200px);
 
-  > h1{
+  > h1 {
     font-size: 50px;
+    color: #ffffff;
   }
 
-  > form{
+  > form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     width: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 
     > .userName, .password {
       display: flex;
       flex-direction: column;
 
+      > label {
+        color: #333; 
+      }
 
-      > p{
-        grid-column: span 3;
-        color: red;
+      > input {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px; 
+        margin-bottom: 5px; 
+      }
+
+      > p {
+        color: #e74c3c; 
         text-align: center;
       }
     }
-    +p{
-      color: red;
+
+    > input[type="submit"] {
+      background-color: #3498db; 
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px; 
+      cursor: pointer;
+      transition: background-color 0.3s ease; 
+
+      &:hover {
+        background-color: #2980b9;
+      }
     }
   }
 `;
